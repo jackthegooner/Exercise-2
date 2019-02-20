@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise 2</title>
+<style>
+    .untukteks{
+        max-width : 30px;
+    }
+
+    .box{
+        text-align: center; 
+        border-style: solid; 
+        height:200px; 
+        width: 50%; 
+        background-color:cyan;
+        position: relative;
+        left:300px;
+        top : 100px
+    }
+</style>
+</head>
+
+<body style="background-color: crimson">
+ <div class="box">
+    <h1>Kalkulator Sederhana : </h1>
+    <input type="text" id="angkapertama" class="untukteks">
+   
+    <select name="" id="operasi">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+    </select>
+
+    <input type="text" id="angkakedua" class="untukteks">
+    <button onclick="kalkulator()"> = </button> <input type="text" id="hasil" class="untukteks">
+ </div>
+    
+
+
+
+    
+
+
+<script>
+    function kalkulator(){
+    var angkapertama = parseInt(document.getElementById("angkapertama").value);
+
+    var angkakedua = parseInt(document.getElementById("angkakedua").value);
+
+    var operasi = document.getElementById("operasi").value;
+
+    var hasil = document.getElementById("hasil");
+
+    var total;
+
+    if(isNaN(angkapertama) && isNaN(angkakedua)){
+        alert("Isi form hanya dengan angka!");
+    }else{
+        if(operasi == "+"){
+            total = angkapertama + angkakedua;
+        }else if(operasi == "-"){
+            total = angkapertama - angkakedua;
+        }else if(operasi == "*"){
+            total = angkapertama * angkakedua;
+        }else{
+            total = angkapertama / angkakedua;
+        }
+
+    
+    }
+        hasil.value = total;
+    }
+</script>    
+</body>
+</html>
